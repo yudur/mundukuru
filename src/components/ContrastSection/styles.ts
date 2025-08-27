@@ -37,6 +37,12 @@ export const ContrastSectionContainer = styled.div`
             width: 80%;
         }
     }
+
+    @media (max-width: 700px) {
+        .text {
+            width: 90%;
+        }
+    }
 `
 
 export const Work = styled.div`
@@ -59,6 +65,54 @@ export const Work = styled.div`
 
         p {
             font-size: 20px;
+        }
+
+
+        @media (max-width: 1185px) {
+            p {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+        }
+    }
+
+    @media (max-width: 970px) {
+        img {
+            width: 25%;
+            height: auto;
+        }
+        gap: 15px;
+        justify-content: space-around;
+
+        .main {
+            p {
+                font-size: 13.8px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
+    }
+
+    @media (max-width: 540px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        .main {
+            width: 90%;
+
+            p {
+                font-size: 9px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
         }
     }
 `

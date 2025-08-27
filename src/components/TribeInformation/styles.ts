@@ -45,4 +45,53 @@ export const TribeInformationContainer = styled.div`
             }
         }
     }
+
+    @media (max-width: 1100px) {
+        .image {
+            img {
+                max-height: 70%;
+            }
+        }
+    }
+
+    @media (max-width: 970px) {
+        .image {
+            img {
+                width: 70%;
+                height: auto;
+            }
+        }
+        .text p {
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 630px) {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        padding: 20px 0;
+
+        .image {
+            width: 90%;
+            height: auto;
+            border-radius: 13px;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .text {
+            width: 90%;
+            border-radius: 13px;
+            padding: 40px 0;
+
+            p {
+                font-size: 14px;
+                width: 90%;
+            }
+        }
+    }
 `

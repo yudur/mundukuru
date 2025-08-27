@@ -25,6 +25,14 @@ export const FooterContainer = styled.footer`
         font-style: bold;
         font-size: 14px;
     }
+
+    @media (max-width: 600px) {
+        height: auto;
+
+        .copyright {
+            font-size: 12px;
+        }
+    }
 `
 
 export const ContentBox = styled.div`
@@ -35,7 +43,7 @@ export const ContentBox = styled.div`
     justify-content: space-between;
     flex: 1;
 
-    .vertical-separation {
+    .separation {
         width: 1px;
         height: 80%;
         background-color: #C68E3F;
@@ -43,8 +51,24 @@ export const ContentBox = styled.div`
     }
 
     .logo img {
+        margin-top: 40px;
         width: 250px;
         height: auto;
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: column-reverse;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+
+        .separation {
+            width: 80%;
+            height: 1px;
+            margin: 20px 0;
+        }
+
     }
 `
 
@@ -97,5 +121,10 @@ export const ContactInfo = styled.div`
 
     .instagram, .email {
         margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+        margin: 0;
+        margin-bottom: 20px;
     }
 `

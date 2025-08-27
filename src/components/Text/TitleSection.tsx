@@ -10,6 +10,7 @@ const TitleContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin: 38px 0;
+    text-align: center;
 
     h1 {
         font-family: 'Poppins', sans-serif;
@@ -17,6 +18,18 @@ const TitleContainer = styled.div`
         font-style: black;
         font-size: 70px;
         color: #C68E3F;
+    }
+
+    @media (max-width: 1175px) {
+        h1 {
+            font-size: 60px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 36px;
+        }
     }
 `
 

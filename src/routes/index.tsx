@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
 function Home() {
     return (
         <HomeContainer>
-            <section>
+            <section style={{ textAlign: 'center' }}>
                 <TitleSection text="O que é a consciência indígena?" />
             </section>
 

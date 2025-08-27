@@ -22,7 +22,7 @@ export function Footer() {
                         </div>
                     </ContactInfo>
 
-                    <div className="vertical-separation"></div>
+                    <div className="separation"></div>
 
                     <div className="logo">
                         <img src={YellowLogoImage} alt="Logo Amarelo" />
