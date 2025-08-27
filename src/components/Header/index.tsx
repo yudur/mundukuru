@@ -1,11 +1,15 @@
 import { HeaderContainer, NavContainer } from "./styles";
 import { Link } from '@tanstack/react-router';
 
+import logoImage from "../../global/assets/LOGO.svg";
+
 export function Header() {
     return (
         <HeaderContainer>
             <NavContainer>
-                <div className="logo">logo</div>
+                <div className="logo">
+                    <img src={logoImage} alt="Logo" />
+                </div>
 
                 <ul>
                     <li><Link to="/munduruku">Munduruku</Link></li>

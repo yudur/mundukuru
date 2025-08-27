@@ -19,8 +19,9 @@ export const NavContainer = styled.nav`
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
 
-    .logo {
-        font-size: 65px;
+    .logo img {
+        width: 120px;
+        height: auto;
     }
 
     ul {
