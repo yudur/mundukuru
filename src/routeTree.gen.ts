@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as YanomamiIndexRouteImport } from './routes/yanomami/index'
+import { Route as MundurukuIndexRouteImport } from './routes/munduruku/index'
+import { Route as KokamaIndexRouteImport } from './routes/kokama/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const YanomamiIndexRoute = YanomamiIndexRouteImport.update({
+  id: '/yanomami/',
+  path: '/yanomami/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MundurukuIndexRoute = MundurukuIndexRouteImport.update({
+  id: '/munduruku/',
+  path: '/munduruku/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KokamaIndexRoute = KokamaIndexRouteImport.update({
+  id: '/kokama/',
+  path: '/kokama/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/kokama': typeof KokamaIndexRoute
+  '/munduruku': typeof MundurukuIndexRoute
+  '/yanomami': typeof YanomamiIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/kokama': typeof KokamaIndexRoute
+  '/munduruku': typeof MundurukuIndexRoute
+  '/yanomami': typeof YanomamiIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/kokama/': typeof KokamaIndexRoute
+  '/munduruku/': typeof MundurukuIndexRoute
+  '/yanomami/': typeof YanomamiIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/kokama' | '/munduruku' | '/yanomami'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/kokama' | '/munduruku' | '/yanomami'
+  id: '__root__' | '/' | '/kokama/' | '/munduruku/' | '/yanomami/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  KokamaIndexRoute: typeof KokamaIndexRoute
+  MundurukuIndexRoute: typeof MundurukuIndexRoute
+  YanomamiIndexRoute: typeof YanomamiIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/yanomami/': {
+      id: '/yanomami/'
+      path: '/yanomami'
+      fullPath: '/yanomami'
+      preLoaderRoute: typeof YanomamiIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/munduruku/': {
+      id: '/munduruku/'
+      path: '/munduruku'
+      fullPath: '/munduruku'
+      preLoaderRoute: typeof MundurukuIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kokama/': {
+      id: '/kokama/'
+      path: '/kokama'
+      fullPath: '/kokama'
+      preLoaderRoute: typeof KokamaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  KokamaIndexRoute: KokamaIndexRoute,
+  MundurukuIndexRoute: MundurukuIndexRoute,
+  YanomamiIndexRoute: YanomamiIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

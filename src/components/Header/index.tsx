@@ -8,7 +8,9 @@ export function Header() {
         <HeaderContainer>
             <NavContainer>
                 <div className="logo">
-                    <img src={logoImage} alt="Logo" />
+                    <Link to="/">
+                        <img src={logoImage} alt="Logo" />
+                    </Link>
                 </div>
 
                 <ul>
